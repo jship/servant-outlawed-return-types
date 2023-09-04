@@ -16,7 +16,7 @@
 module Outlawed where
 
 import Data.Aeson (ToJSON)
-import Data.Constraint (Dict(Dict))
+--import Data.Constraint (Dict(Dict))
 import Data.Kind (Constraint, Type)
 import Data.Proxy (Proxy(Proxy))
 import Data.Text (Text)
@@ -24,15 +24,16 @@ import Data.Time (Day, UTCTime)
 import Data.UUID (UUID)
 import GHC.Generics (type (:*:), type (:+:), Generic(Rep), K1, M1, U1, V1)
 import GHC.TypeLits (ErrorMessage((:$$:), (:<>:), ShowType, Text), TypeError)
-import Network.HTTP.Types (StdMethod(GET))
-import Servant.API (type (:<|>), type (:>), Get, Headers, JSON, PostNoContent, ReqBody, Verb)
+--import Network.HTTP.Types (StdMethod(GET))
+import Servant.API (type (:<|>), type (:>), Get, JSON, PostNoContent, ReqBody, Verb)
+--import Servant.API (Headers)
 
 type MyAPI =
        "sensitive" :> Get '[JSON] VerySensitiveData
   :<|> "sensitive" :> ReqBody '[JSON] VerySensitiveData :> PostNoContent
   :<|> "underhanded" :> Get '[JSON] UnderhandedData
 
--- | Uncomment the @where@ clause to see the type errors.
+-- | Uncomment the @where@ clause (plus imports) to see the type errors.
 myAPI :: Proxy MyAPI
 myAPI = Proxy
 --  where
