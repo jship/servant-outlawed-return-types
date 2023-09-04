@@ -1,0 +1,36 @@
+name: servant-outlawed-return-types
+version: '0.0.0.0'
+github: "jship/servant-outlawed-return-types"
+license: MIT
+license-file: LICENSE.md
+copyright: 2023 (c) Jason Shipman
+author: "Jason Shipman"
+maintainer: "Jason Shipman"
+synopsis: Outlawed return types in Servant APIs
+description: |
+  @servant-outlawed-return-types@ demonstrates a simple means of outlawing
+  specific return types in Servant APIs.
+category: Web
+
+extra-source-files:
+- package.yaml
+- README.md
+- LICENSE.md
+
+ghc-options:
+  - -Wall
+  - -fwarn-tabs
+  - -Wincomplete-uni-patterns
+  - -Wredundant-constraints
+
+library:
+  dependencies:
+  - aeson
+  - base
+  - constraints
+  - http-types
+  - servant
+  - text
+  - time
+  - uuid
+  source-dirs: library

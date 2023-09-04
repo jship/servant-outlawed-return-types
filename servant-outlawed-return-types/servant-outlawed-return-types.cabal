@@ -1,0 +1,47 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           servant-outlawed-return-types
+version:        0.0.0.0
+synopsis:       Outlawed return types in Servant APIs
+description:    @servant-outlawed-return-types@ demonstrates a simple means of outlawing
+                specific return types in Servant APIs.
+category:       Web
+homepage:       https://github.com/jship/servant-outlawed-return-types#readme
+bug-reports:    https://github.com/jship/servant-outlawed-return-types/issues
+author:         Jason Shipman
+maintainer:     Jason Shipman
+copyright:      2023 (c) Jason Shipman
+license:        MIT
+license-file:   LICENSE.md
+build-type:     Simple
+extra-source-files:
+    package.yaml
+    README.md
+    LICENSE.md
+
+source-repository head
+  type: git
+  location: https://github.com/jship/servant-outlawed-return-types
+
+library
+  exposed-modules:
+      Outlawed
+  other-modules:
+      Paths_servant_outlawed_return_types
+  hs-source-dirs:
+      library
+  ghc-options: -Wall -fwarn-tabs -Wincomplete-uni-patterns -Wredundant-constraints
+  build-depends:
+      aeson
+    , base
+    , constraints
+    , http-types
+    , servant
+    , text
+    , time
+    , uuid
+  default-language: Haskell2010
